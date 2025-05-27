@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.12528171.css",
+    "main.js": "/static/js/main.92180e62.js",
+    "static/js/488.c400ed05.chunk.js": "/static/js/488.c400ed05.chunk.js",
+    "static/media/background-university.jpg": "/static/media/background-university.896885c8a00166c04ea6.jpg",
+    "index.html": "/index.html",
+    "main.12528171.css.map": "/static/css/main.12528171.css.map",
+    "main.92180e62.js.map": "/static/js/main.92180e62.js.map",
+    "488.c400ed05.chunk.js.map": "/static/js/488.c400ed05.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.12528171.css",
+    "static/js/main.92180e62.js"
+  ]
+}
