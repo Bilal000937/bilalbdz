@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test d'affichage statique</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      text-align: center;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      max-width: 800px;
+      width: 90%;
+    }
+    h1 {
+      color: red;
+      background-color: yellow;
+      padding: 15px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+    .debug-info {
+      background-color: #f8f9fa;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 15px;
+      margin-top: 20px;
+      text-align: left;
+      font-family: monospace;
+      white-space: pre-wrap;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>TEST D'AFFICHAGE STATIQUE</h1>
+    <p>Si vous voyez cette page, votre navigateur affiche correctement le HTML statique.</p>
+    <p>Cela signifie que le problème est probablement lié à l'application React et non au navigateur.</p>
+    
+    <div class="debug-info" id="debug-info">
+      Informations de débogage :
+      URL: <script>document.write(window.location.href)</script>
+      Date et heure: <script>document.write(new Date().toLocaleString())</script>
+    </div>
+    
+    <button onclick="testJS()">Cliquez-moi pour tester JavaScript</button>
+  </div>
+
+  <script>
+    function testJS() {
+      alert('JavaScript fonctionne correctement!');
+      
+      // Ajouter plus d'informations de débogage
+      const debugInfo = document.getElementById('debug-info');
+      debugInfo.innerHTML += '\n\nTest JavaScript réussi à ' + new Date().toLocaleTimeString();
+      
+      // Vérifier si React est chargé
+      if (window.React) {
+        debugInfo.innerHTML += '\nReact est chargé (version ' + window.React.version + ')';
+      } else {
+        debugInfo.innerHTML += '\nReact n\'est pas chargé dans cette page';
+      }
+    }
+    
+    // Ajouter des informations sur la taille de la fenêtre
+    window.onload = function() {
+      const debugInfo = document.getElementById('debug-info');
+      debugInfo.innerHTML += '\nTaille de la fenêtre: ' + window.innerWidth + 'x' + window.innerHeight;
+    }
+  </script>
+</body>
+</html>
